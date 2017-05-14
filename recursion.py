@@ -18,17 +18,17 @@ def gcd(a, b):
 
 
 def compareTo(s1, s2):
-    if len(s1) == 1:
-        if len(s2) == 1:
-            if s1 == s2:
+    if s1[0] > s2[0]:
+        return 1
+    elif s1[0] < s2[0]:
+        return -1
+    else:
+        if len(s1) == 1:
+            if len(s2) == 1:
                 return 0
-            elif s1 > s2:
-                return 1
             else:
                 return -1
+        elif len(s2) == 1:
+            return 1
         else:
-            return -1
-    elif len(s2) == 1:
-        return 1
-    else:
-        return compareTo(s1[1:], s2[1:])
+            return compareTo(s1[1:], s2[1:])
